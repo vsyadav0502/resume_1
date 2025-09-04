@@ -1,14 +1,251 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>My Resume</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Pages 404 Error Solution</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        header {
+            background: #24292e;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.8;
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        .error-section {
+            background: #fff5f5;
+            border-left: 4px solid #ff6b6b;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        
+        .solution-section {
+            background: #f0fff4;
+            border-left: 4px solid #48bb78;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        
+        h2 {
+            color: #2d3748;
+            margin: 25px 0 15px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 8px;
+        }
+        
+        h3 {
+            color: #4a5568;
+            margin: 20px 0 10px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        ul, ol {
+            margin: 15px 0;
+            padding-left: 30px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        code {
+            background: #edf2f7;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+        }
+        
+        pre {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 15px;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        
+        .file-structure {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 15px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .note {
+            background: #e6f7ff;
+            border-left: 4px solid #1890ff;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #f7fafc;
+            color: #718096;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <h1>My Resume</h1>
-  <p><a href="resume.pdf" target="_blank">📄 Click here to view my resume</a></p>
-  
-  <!-- Embed PDF directly -->
-  <embed src="resume.pdf.pdf" width="100%" height="800px" type="application/pdf">
+    <div class="container">
+        <header>
+            <h1>GitHub Pages 404 Error</h1>
+            <p class="subtitle">Solving the "File not found" error when uploading your resume</p>
+        </header>
+        
+        <div class="content">
+            <h2>Understanding the Problem</h2>
+            <p>You're seeing a 404 error on GitHub Pages because the server can't find the file you're trying to access. This typically happens due to one of these reasons:</p>
+            
+            <div class="error-section">
+                <h3>Common Causes:</h3>
+                <ul>
+                    <li>Incorrect file name or case sensitivity issues</li>
+                    <li>Missing <code>index.html</code> file for root URL</li>
+                    <li>File permissions preventing access</li>
+                    <li>Incorrect repository configuration</li>
+                </ul>
+            </div>
+            
+            <h2>Step-by-Step Solution</h2>
+            
+            <div class="solution-section">
+                <h3>1. Check File Name and Case Sensitivity</h3>
+                <p>GitHub Pages is case-sensitive. Make sure your file name matches exactly with the URL, including capitalization.</p>
+                
+                <div class="file-structure">
+                    // If your resume is named "MyResume.pdf"<br>
+                    // But you're linking to "myresume.pdf"<br>
+                    // This will cause a 404 error
+                </div>
+            </div>
+            
+            <div class="solution-section">
+                <h3>2. Ensure Proper File Structure</h3>
+                <p>Your repository should have the correct structure. For a resume, you might have:</p>
+                
+                <div class="file-structure">
+                    your-username.github.io/<br>
+                    ├── index.html          # Your main page<br>
+                    ├── resume.pdf          # Your resume file<br>
+                    └── assets/<br>
+                        ├── css/style.css<br>
+                        └── images/logo.png
+                </div>
+            </div>
+            
+            <div class="solution-section">
+                <h3>3. Enable GitHub Pages for Your Repository</h3>
+                <p>Make sure GitHub Pages is enabled in your repository settings:</p>
+                <ol>
+                    <li>Go to your repository on GitHub</li>
+                    <li>Click on "Settings"</li>
+                    <li>Scroll down to the "GitHub Pages" section</li>
+                    <li>Select the source branch (typically <code>main</code> or <code>gh-pages</code>)</li>
+                    <li>Click "Save"</li>
+                </ol>
+            </div>
+            
+            <div class="solution-section">
+                <h3>4. Create an index.html File (If Missing)</h3>
+                <p>For root URLs, you need an <code>index.html</code> file. Create one with this basic template:</p>
+                
+                <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;My Resume&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Welcome to My Portfolio&lt;/h1&gt;
+    &lt;p&gt;View my &lt;a href="resume.pdf"&gt;resume&lt;/a&gt;&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+            </div>
+            
+            <div class="note">
+                <h3>Important Note</h3>
+                <p>After making changes to your repository, it may take a few minutes for GitHub Pages to update. Be patient and refresh your page after 2-3 minutes.</p>
+            </div>
+            
+            <h2>Testing Your Solution</h2>
+            <p>Once you've implemented the changes:</p>
+            <ol>
+                <li>Commit and push your changes to GitHub</li>
+                <li>Wait a few minutes for GitHub Pages to rebuild your site</li>
+                <li>Refresh your GitHub Pages URL</li>
+                <li>If the error persists, double-check the file names and repository settings</li>
+            </ol>
+            
+            <h2>Additional Resources</h2>
+            <ul>
+                <li><a href="https://docs.github.com/en/pages" target="_blank">GitHub Pages Documentation</a></li>
+                <li><a href="https://www.githubstatus.com/" target="_blank">GitHub Status Page</a></li>
+                <li><a href="https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site" target="_blank">Creating a GitHub Pages Site</a></li>
+            </ul>
+        </div>
+        
+        <footer>
+            <p>This guide was created to help solve GitHub Pages 404 errors. If you continue to experience issues, consult the official GitHub documentation.</p>
+        </footer>
+    </div>
 </body>
 </html>
